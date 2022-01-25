@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EquiposModelStoreContainer" CdmEntityContainer="EquiposEntities1">
+    <EntitySetMapping Name="Data">
+      <EntityTypeMapping TypeName="EquiposModel.Data">
+        <MappingFragment StoreEntitySet="Data">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+          <ScalarProperty Name="FechaIni" ColumnName="FechaIni" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="FechaEntr" ColumnName="FechaEntr" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+          <ScalarProperty Name="Multa" ColumnName="Multa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
