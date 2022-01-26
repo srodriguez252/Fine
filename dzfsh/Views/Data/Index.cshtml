@@ -6,6 +6,7 @@
 
 <h2>Equipos</h2>
 
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -32,9 +33,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Equipo)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Multa)
-        </th>
+
         <th></th>
     </tr>
 
@@ -61,9 +60,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Equipo)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Multa)
-        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
@@ -73,3 +70,34 @@
 }
 
 </table>
+<br />
+<center>
+    @using (Html.BeginForm("Index", "Data", FormMethod.Post))
+    {
+        <span>From</span><input type="date" name="fechainicio">
+        <span>To</span><input type="date" name="fechafin">
+        <input type="submit" value="Show" />
+        <br />
+        <table class="table" >
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Usuario)
+                <th>
+                    @Html.DisplayNameFor(model => model.Multa)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usuario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Multa)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</center>

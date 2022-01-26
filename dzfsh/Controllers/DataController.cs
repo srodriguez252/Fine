@@ -19,7 +19,7 @@ namespace dzfsh.Controllers
         {
             var res = new List<Data>();
             var multa = db.Data.ToList();
-            //(EndDate - StartDate).Days
+
             foreach(var v in multa)
             {
                 if(v.FechaEntr > v.FechaFin)
@@ -33,9 +33,16 @@ namespace dzfsh.Controllers
                     v.Multa = 0;
                 }
             }
-
+            db.SaveChanges();
             return View(db.Data.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(DateTime fechainicio, DateTime fechafin)
+        {
+            return View(db.Data.Where(i => (i.FechaIni >= fechainicio) && (i.FechaFin <= fechafin)).ToList());
+        }
+
+
 
         // GET: Data/Details/5
         public ActionResult Details(int? id)
