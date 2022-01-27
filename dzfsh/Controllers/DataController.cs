@@ -28,10 +28,21 @@ namespace dzfsh.Controllers
                     var mul = (v.FechaEntr - (v.FechaFin != null ? v.FechaFin : today)).Value.Days;
                     v.Multa = (mul * 5);
                 }
-                else 
+                else
                 {
                     v.Multa = 0;
                 }
+                
+                
+                if(v.FechaEntr == null)
+                {
+                    v.Estado = "Prestado";
+                }
+                else
+                {
+                    v.Estado = "Entregado";
+                }
+               
             }
             db.SaveChanges();
             return View(db.Data.ToList());
